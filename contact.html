@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Hire Mian Mansoor Software Engineer</title>
+  <meta name="description" content="Get in touch with Mian Mansoor to discuss your project. Contact form for custom app development, website, e-commerce, or AI automation work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>MM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-liquid nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-tag reveal-up">Let's Connect</span>
+        <h1 class="page-hero-title reveal-up delay-1">Get In <span class="gradient-text">Touch</span></h1>
+        <p class="page-hero-desc reveal-up delay-2">
+          Whether you have a project in mind or just want to explore possibilities — I'd love to hear from you. Let's build something great together.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info reveal-left">
+          <div class="contact-info-card glass-card">
+            <h2 class="contact-info-title">Let's Work Together</h2>
+            <p class="contact-info-desc">
+              I'm always open to discussing new projects and creative opportunities. Fill out the form and I'll get back to you within <strong>24 hours</strong>.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">⚡</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Response Time</span>
+                  <span class="contact-detail-value">Within 24 hours</span>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">🌍</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Availability</span>
+                  <span class="contact-detail-value">Remote — Worldwide</span>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">💼</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Status</span>
+                  <span class="contact-detail-value available-badge">
+                    <span class="avail-dot"></span> Available for Hire
+                  </span>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">💵</div>
+                <div class="contact-detail-text">
+                  <span class="contact-detail-label">Rate</span>
+                  <span class="contact-detail-value">$34.97 / hour</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-divider"></div>
+
+            <h3 class="contact-process-title">What Happens Next?</h3>
+            <div class="contact-process-steps">
+              <div class="contact-process-step">
+                <span class="cp-num">1</span>
+                <span>I receive your message and review your requirements</span>
+              </div>
+              <div class="contact-process-step">
+                <span class="cp-num">2</span>
+                <span>I reach out to schedule a discovery call or send a detailed quote</span>
+              </div>
+              <div class="contact-process-step">
+                <span class="cp-num">3</span>
+                <span>We align on scope, timeline, and budget — then get started!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper reveal-right">
+          <form class="contact-form glass-card" id="contactForm" novalidate>
+            <div class="form-success" id="formSuccess" style="display:none;">
+              <div class="success-icon">✓</div>
+              <h3>Message Sent!</h3>
+              <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+            </div>
+
+            <div class="form-fields" id="formFields">
+              <h2 class="form-title">Send Me a Message</h2>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" class="form-input" placeholder="John" required autocomplete="given-name" />
+                  <span class="form-error" id="firstNameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Doe" required autocomplete="family-name" />
+                  <span class="form-error" id="lastNameError"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required autocomplete="email" />
+                <span class="form-error" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject *</label>
+                <select id="subject" name="subject" class="form-input form-select" required>
+                  <option value="" disabled selected>Select a subject...</option>
+                  <option value="custom-app">Custom App Development</option>
+                  <option value="website">Website Development</option>
+                  <option value="ecommerce">E-Commerce Platform</option>
+                  <option value="ai-automation">AI Automation</option>
+                  <option value="quote">Request a Quote</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="form-error" id="subjectError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="budget" class="form-label">Estimated Budget</label>
+                <select id="budget" name="budget" class="form-input form-select">
+                  <option value="" disabled selected>Select your budget range...</option>
+                  <option value="under-500">Under $500</option>
+                  <option value="500-1500">$500 – $1,500</option>
+                  <option value="1500-3000">$1,500 – $3,000</option>
+                  <option value="3000-7000">$3,000 – $7,000</option>
+                  <option value="7000+">$7,000+</option>
+                  <option value="discuss">I'd like to discuss</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Project Details *</label>
+                <textarea id="message" name="message" class="form-input form-textarea" rows="5" placeholder="Tell me about your project — what do you want to build? What's the goal? Any specific features in mind?" required></textarea>
+                <span class="form-error" id="messageError"></span>
+              </div>
+
+              <div class="form-group form-checkbox-group">
+                <label class="form-checkbox">
+                  <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
+                  <span class="checkbox-custom"></span>
+                  I understand this is an hourly-rate engagement at $34.97/hour (development only)
+                </label>
+                <span class="form-error" id="termsError"></span>
+              </div>
+
+              <button type="submit" class="btn btn-liquid btn-primary btn-lg btn-full" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-icon">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-bracket">&lt;</span>MM<span class="logo-bracket">/&gt;</span>
+          </a>
+          <p>Crafting digital experiences that inspire trust and drive growth.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mian Mansoor. All rights reserved.</p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
