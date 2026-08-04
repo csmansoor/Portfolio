@@ -370,6 +370,19 @@
   window.addEventListener('resize', updateHints);
 })();
 
+/* ── Contact Form Config ── */
+const CONTACT_EMAIL = 'mianmansoor2018@gmail.com';
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+
+const SUBJECT_LABELS = {
+  'custom-app': 'Custom App Development',
+  'website': 'Website Development',
+  'ecommerce': 'E-Commerce Platform',
+  'ai-automation': 'AI Automation',
+  'quote': 'Request a Quote',
+  'other': 'Other'
+};
+
 /* ── Contact Form Validation & Submission ── */
 (function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -428,14 +441,49 @@
 
     if (!valid) return;
 
-    // Simulate submission
     submitBtn.disabled = true;
     submitBtn.querySelector('.btn-text').textContent = 'Sending…';
 
-    await new Promise(resolve => setTimeout(resolve, 1600));
+    const budget = document.getElementById('budget')?.value;
+    const budgetLabels = {
+      'under-500': 'Under $500',
+      '500-1500': '$500 – $1,500',
+      '1500-3000': '$1,500 – $3,000',
+      '3000-7000': '$3,000 – $7,000',
+      '7000+': '$7,000+',
+      'discuss': "I'd like to discuss"
+    };
+    const subjectLabel = SUBJECT_LABELS[subject] || subject;
 
-    formFields.style.display = 'none';
-    formSuccess.style.display = 'block';
+    try {
+      const response = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`,
+          email,
+          subject: subjectLabel,
+          message,
+          budget: budget ? (budgetLabels[budget] || budget) : 'Not specified',
+          _subject: `Portfolio Inquiry: ${subjectLabel}`,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.message || 'Failed to send message');
+
+      formFields.style.display = 'none';
+      formSuccess.style.display = 'block';
+    } catch (err) {
+      showError('message', 'Could not send your message. Please try again or email me directly at ' + CONTACT_EMAIL);
+      submitBtn.disabled = false;
+      submitBtn.querySelector('.btn-text').textContent = 'Send Message';
+    }
   });
 })();
 
